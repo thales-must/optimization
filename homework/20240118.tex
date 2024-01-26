@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\title{Engineering Optimization Homework}
+\author{Tai Jiang}
+\date{January 2024}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{color}
+\usepackage{listings}
+
+
+\begin{document}
+  \maketitle
+  \section{Is the intersection of two convex sets convex?}
+  \begin{itemize}
+    \item lf the intersection is empty, or consists of a single point, it is true bydefinition
+    \item Otherwise, take any two points A, B in the intersection. The line ABjoining these points must also lie wholly within their intersection
+    \item Therefore, the intersection is a convex set
+    \item The intersection of any number of convex sets is also convex
+  \end{itemize}
+
+  \begin{proof}
+  Let $A$ and $B$ be two convex sets. Show by $A \cap B$ is also convex.
+
+  Consider any two points $x$ and $y$,  $\forall x, y \in A \cap B$.
+  
+  $x \in A, x \in B, y \in A, y \in B$
+
+  To prove that $A \cap B$ is convex, we need to show that for any $\lambda \in [0,1]$, the point $\lambda x + (1-\lambda)y$ is also in $A \cap B$.
+
+  Since $x,y \in A$, and $A$ is convex, we have $\lambda x + (1-\lambda)y \in A (\lambda \in [0,1])$.
+
+  Similarly, since $x,y \in B$, and $B$ is convex, we have $\lambda x + (1-\lambda)y \in B (\lambda \in [0,1])$.
+
+  Therefore, $\lambda x + (1-\lambda)y$ is in both $A$ and $B$, which implies that $\lambda x + (1-\lambda)y \in A \cap B$.
+
+  Since this holds for any two points $x$ and $y$ in $A \cap B$, it follows that $A \cap B$ is convex.
+
+  Thus, we have proven that the intersection of two convex sets is convex.
+
+  \end{proof}
+
+\end{document}

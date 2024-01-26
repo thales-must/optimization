@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\title{Engineering Optimization Homework}
+\author{Tai Jiang}
+\date{January 2024}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{color}
+\usepackage{listings}
+
+
+\begin{document}
+  \maketitle
+  \section{Multiperiod Inventory Problem}
+  \begin{itemize}
+    \item A company is scheduling its production for the next 3 months
+    \item Demand for M1 through M3: 200,150,400
+    \item Three types of costs
+    \begin{itemize}
+      \item Regular-time labor: \$2000/product
+      \item Overtime labor: \$3000/product
+      \item Holding (end of each month): \$500/product
+    \end{itemize}
+    \item Production capacities
+    \begin{itemize}
+      \item at most 200 products with RT labor per month
+      \item unlimited with OT labor per month
+    \end{itemize}
+  \end{itemize}
+
+  $P_t$ as the product for period $t$, $t$ is the month.
+
+  $P_{rt}$ as the regular-time labor product.
+
+  $P_{ot}$ as the overtime labor product.
+
+  Demand limitation is Equation \ref{eq:limitation}.:
+  \begin{equation}
+    \begin{aligned}
+      P_{r1} + P_{o1} &\geq 200 \\
+      P_{r2} + P_{o2} &\geq 150 \\
+      P_{r3} + P_{o3} &\geq 400
+    \end{aligned}
+    \label{eq:limitation}
+  \end{equation}
+
+  Cost is Equation \ref{eq:cost}.
+  \begin{equation}
+    \begin{aligned}
+      cost  &= 2000 P_{r1} + 3000 P_{o1} \\
+            &+ 2000 P_{r2} + 3000 P_{o2} + 500 (P_{r1} + P_{o1} - 200) \\
+            &+ 2000 P_{r3} + 3000 P_{o3} + 500 (P_{r1} + P_{o1} + P_{r2} + P_{o2} - 200 - 150)
+    \end{aligned}
+    \label{eq:cost}
+  \end{equation}
+
+  The minimize total cost is Equation \ref{eq:minimize}.
+
+  \begin{equation}
+    \begin{aligned}
+      cost\downarrow &= 1675000 \\
+      P_{r1} &= 200, \quad P_{o1} = 0 \\
+      P_{r2} &= 200, \quad P_{o2} = 0 \\
+      P_{r3} &= 200, \quad P_{o3} = 150
+    \end{aligned}
+    \label{eq:minimize}
+  \end{equation}
+
+\end{document}

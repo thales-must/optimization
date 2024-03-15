@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{ctex}
+\usepackage[utf8]{inputenc}
+\title{Engineering Optimization Homework}
+\author{Tai Jiang}
+\date{March 2024}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{color}
+\usepackage{listings}
+
+
+\begin{document}
+  \maketitle
+  \section{真假话}
+  \begin{itemize}
+    \item A:是B干的
+    \item B:是D干的
+    \item C:不是我
+    \item D:B说谎
+    \item 只有一个人说真话
+  \end{itemize}
+
+  Question is Equation \ref{eq:trust}.:
+
+  y为真话,x为干的
+
+  \begin{equation}
+    \begin{aligned}
+      y_A + y_B + y_C + y_D &= 1 \\
+      y_A &= x_B \\
+      y_B &= x_D \\
+      y_C &= 1 - x_C \\
+      y_D &= 1 - x_D \\
+    \end{aligned}
+    \label{eq:trust}
+  \end{equation}
+
+
+\end{document}

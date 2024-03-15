@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage{ctex}
+\usepackage[utf8]{inputenc}
+\title{Engineering Optimization Homework}
+\author{Tai Jiang}
+\date{March 2024}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usetikzlibrary{automata, positioning}
+\usepackage{color}
+\usepackage{listings}
+
+
+\begin{document}
+  \maketitle
+  \section{Structurally Minimal Supervisors}
+
+  \begin{itemize}
+    \item[] $\left\lvert R(N, M_0)\right\rvert = 20 $
+    \item[] $\left\lvert M_L \right\rvert = 15 $
+    \item[] $\left\lvert M_{FBM} \right\rvert = 5 $
+    \item[] 
+    \item[] $\left\lvert M^*_{FBM} \right\rvert = 3 $
+    \item[] $\left\lvert M^*_L \right\rvert = 2 $
+    \item[]
+    \item[] $M^*_{FBM}=\{p_2+p_5, p_3+p_5, p_2+p_6\} $
+    \item[] $M^*_L=\{p_2+p_3+p_4, p_5+p_6+p_7\} $
+  \end{itemize}
+ 
+  
+  \paragraph{Answer}:
+
+  \begin{equation*}
+    \begin{aligned}
+      M^*_{FBM} &= \{p_2+p_5, p_3+p_5, p_2+p_6\} = \{ M_1, M_2, M_3\} \\
+      M^*_L &= \{p_2+p_3+p_4, p_5+p_6+p_7\} = \{ M_4, M_5\} \\
+      \max f &= \sum_{k \in \mathbb{N}^*_{FBM}, k \neq  j }^{f_k}   = f_1 + f_2 + f_3 \\
+      & l_2 + l_3 + l_4 \leq \beta & M_4 \\
+      & l_5 + l_6 + l_7 \leq \beta & M_5 \\
+      & l_2 + l_5 \leq \beta + 1 + Q(1-f_1) & M_1 \\
+      & l_3 + l_5 \leq \beta + 1 + Q(1-f_2) & M_2 \\
+      & l_2 + l_6 \leq \beta + 1 + Q(1-f_3) & M_3 \\
+    \end{aligned}
+  \end{equation*}
+
+\end{document}
